@@ -18,7 +18,7 @@ public interface CategorieRepository extends JpaRepository<Categorie, Integer> {
     @Modifying
     @Transactional
     @Query("UPDATE Categorie c SET c.label=:label,c.code=:code where c.id=:id")
-    void updateCategorie(@Param("email") String label, @Param("code") String code, @Param("id") int id);
+    void updateCategorie(@Param("label") String label, @Param("code") String code, @Param("id") int id);
 
     public Categorie findByCode(String code);
 }
