@@ -19,6 +19,11 @@ public class CategorieController {
         categorieService.save(categorie);
     }
 
+    @PostMapping("/updateCat")
+    public void update(String label,String code,int id) {
+        categorieService.updateCategorie(label,code,id);
+    }
+
     @GetMapping("")
     public List<Categorie> findAll() {
         return categorieService.findAll();
