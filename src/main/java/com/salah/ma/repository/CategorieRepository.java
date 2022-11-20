@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface CategorieRepository extends JpaRepository<Categorie, Integer> {
@@ -21,4 +22,6 @@ public interface CategorieRepository extends JpaRepository<Categorie, Integer> {
     void updateCategorie(@Param("label") String label, @Param("code") String code, @Param("id") int id);
 
     public Categorie findByCode(String code);
+
+    List<Categorie> findByCodeLikeAndLabelLike(String code, String label);
 }
