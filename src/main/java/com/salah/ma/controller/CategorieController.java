@@ -1,4 +1,4 @@
-package com.salah.ma;
+package com.salah.ma.controller;
 
 import com.salah.ma.bean.Categorie;
 import com.salah.ma.service.CategorieService;
@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/categorie")
+@RequestMapping("/api/categories")
 public class CategorieController {
 
     @Autowired
@@ -19,8 +19,8 @@ public class CategorieController {
         categorieService.save(categorie);
     }
 
-    @PostMapping("/updateCat")
-    public void update(String label,String code,int id) {
+    @PostMapping("/update")
+    public void update(@RequestParam String label, @RequestParam String code, @RequestParam int id) {
         categorieService.updateCategorie(label,code,id);
     }
 
