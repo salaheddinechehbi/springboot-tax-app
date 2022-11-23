@@ -9,7 +9,10 @@ public class Redevable {
 
     @Id @GeneratedValue
     private long id;
-    private String nom;
+    private String name;
+    private String email;
+    private String tel;
+    private String cin;
 
     public long getId() {
         return id;
@@ -19,19 +22,46 @@ public class Redevable {
         this.id = id;
     }
 
-    public String getNom() {
-        return nom;
+    public String getName() {
+        return name;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+    public String getCin() {
+        return cin;
+    }
+
+    public void setCin(String cin) {
+        this.cin = cin;
     }
 
     @Override
     public String toString() {
         return "Redevable{" +
                 "id=" + id +
-                ", nom='" + nom + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", tel='" + tel + '\'' +
+                ", cin='" + cin + '\'' +
                 '}';
     }
 }
