@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -38,10 +39,12 @@ public class RedevableService {
         return redevableRepository.count();
     }
 
+    @Transactional
     public void deleteById(Long aLong) {
         redevableRepository.deleteById(aLong);
     }
 
+    @Transactional
     public void delete(Redevable entity) {
         redevableRepository.delete(entity);
     }
