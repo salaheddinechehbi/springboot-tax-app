@@ -34,10 +34,16 @@ public class RedevableController {
         return redevableService.save(r);
     }
 
+    @PutMapping("")
+    public Redevable update(Redevable r) {
+        return redevableService.save(r);
+    }
+
     public long count() {
         return redevableService.count();
     }
 
+    @DeleteMapping()
     public void deleteById(Long aLong) {
         redevableService.deleteById(aLong);
     }
