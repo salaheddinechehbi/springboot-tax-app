@@ -20,7 +20,7 @@ public class RedevableController {
     }
 
     @GetMapping("findByName/{name}/{email}")
-    public Redevable findByNameLikeOrEmailLike(@RequestParam String name, @RequestParam String email) {
+    public Redevable findByNameLikeOrEmailLike(@PathVariable String name, @PathVariable String email) {
         return redevableService.findByNameLikeOrEmailLike(name, email);
     }
 
@@ -30,12 +30,12 @@ public class RedevableController {
     }
 
     @PostMapping("")
-    public Redevable save(Redevable r) {
+    public Redevable save(@RequestBody Redevable r) {
         return redevableService.save(r);
     }
 
     @PutMapping("")
-    public Redevable update(Redevable r) {
+    public Redevable update(@RequestBody Redevable r) {
         return redevableService.save(r);
     }
 
