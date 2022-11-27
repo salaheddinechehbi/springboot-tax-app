@@ -1,9 +1,6 @@
 package com.salah.ma.bean;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class TaxTnb {
@@ -11,24 +8,28 @@ public class TaxTnb {
     @Id  @GeneratedValue
     private long id;
 
-    @OneToOne
+    @ManyToOne
     private Categorie categorie;
-    @OneToOne
+    @ManyToOne
     private Terrain terrain;
-    @OneToOne
+    @ManyToOne
     private Redevable redevable;
-    @OneToOne
-private TauxTnb tauxTnb;
-private double mtTotal;
+    @ManyToOne
+    private TauxTnb tauxTnb;
+    private double mtTotal;
 
-    public TaxTnb( Terrain terrain, Redevable redevable, TauxTnb tauxTnb, double mtTotal) {
+    private int annee;
+
+    public TaxTnb() {
+    }
+
+    public TaxTnb(Categorie categorie, Terrain terrain, Redevable redevable, TauxTnb tauxTnb, double mtTotal, int annee) {
+        this.categorie = categorie;
         this.terrain = terrain;
         this.redevable = redevable;
         this.tauxTnb = tauxTnb;
         this.mtTotal = mtTotal;
-    }
-
-    public TaxTnb() {
+        this.annee = annee;
     }
 
     public long getId() {
@@ -37,6 +38,14 @@ private double mtTotal;
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public Categorie getCategorie() {
+        return categorie;
+    }
+
+    public void setCategorie(Categorie categorie) {
+        this.categorie = categorie;
     }
 
     public Terrain getTerrain() {
@@ -69,5 +78,13 @@ private double mtTotal;
 
     public void setMtTotal(double mtTotal) {
         this.mtTotal = mtTotal;
+    }
+
+    public int getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(int annee) {
+        this.annee = annee;
     }
 }

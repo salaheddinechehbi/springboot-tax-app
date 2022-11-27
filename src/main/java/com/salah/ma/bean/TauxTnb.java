@@ -6,11 +6,12 @@ import javax.persistence.*;
 public class TauxTnb {
     @Id @GeneratedValue
     private Long id;
-    @OneToOne
+    @ManyToOne
     private Categorie categorie;
     private int surfaceMin;
     private int surfaceMax;
     private double mtParMetre;
+    private int annee;
 
     public TauxTnb() {
     }
@@ -20,6 +21,7 @@ public class TauxTnb {
         this.surfaceMin = surfaceMin;
         this.surfaceMax = surfaceMax;
         this.mtParMetre = mtParMetre;
+        this.annee = annee;
     }
 
     public Long getId() {
@@ -60,5 +62,13 @@ public class TauxTnb {
 
     public void setMtParMetre(double mtParMetre) {
         this.mtParMetre = mtParMetre;
+    }
+
+    public int getAnnee() {
+        return annee;
+    }
+
+    public void setAnnee(int annee) {
+        this.annee = annee;
     }
 }
