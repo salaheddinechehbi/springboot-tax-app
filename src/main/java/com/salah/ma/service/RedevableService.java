@@ -48,4 +48,8 @@ public class RedevableService {
     public void delete(Redevable entity) {
         redevableRepository.delete(entity);
     }
+
+    public Redevable findByCin(String cin) {
+        return redevableRepository.findByCin(cin);
+    }
 }

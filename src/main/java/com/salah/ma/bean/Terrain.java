@@ -13,7 +13,7 @@ public class Terrain {
 	@Id @GeneratedValue
 	private int id;
 	private String ref;
-	private String surface;
+	private Double surface;
 	@ManyToOne
 	private Categorie categorie;
 	@ManyToOne
@@ -37,11 +37,11 @@ public class Terrain {
 		this.ref = ref;
 	}
 
-	public String getSurface() {
+	public Double getSurface() {
 		return surface;
 	}
 
-	public void setSurface(String surface) {
+	public void setSurface(Double surface) {
 		this.surface = surface;
 	}
 
