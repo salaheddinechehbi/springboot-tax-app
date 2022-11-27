@@ -15,7 +15,7 @@ public class QuartierController {
     private QuartierService quartierService;
 
     @GetMapping("/findByLabel/{label}")
-    public Quartier findByLabel(String label) {
+    public Quartier findByLabel(@PathVariable String label) {
         return quartierService.findByLabel(label);
     }
 
@@ -25,12 +25,12 @@ public class QuartierController {
     }
 
     @PostMapping("")
-    public void save(Quartier quartier) {
+    public void save(@RequestBody Quartier quartier) {
         quartierService.save(quartier);
     }
 
     @GetMapping("/find/{id}")
-    public Quartier findById(Long aLong) {
+    public Quartier findById(@PathVariable Long aLong) {
         return quartierService.findById(aLong);
     }
 
