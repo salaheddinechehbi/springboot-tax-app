@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TauxTnbRepository extends JpaRepository<TauxTnb, Long> {
 
+   TauxTnb findByCategorieCode(String code);
 }

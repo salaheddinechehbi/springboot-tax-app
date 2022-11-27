@@ -34,4 +34,8 @@ public class TauxTnbService {
     public void deleteById(Long aLong) {
         tauxTnbRepository.deleteById(aLong);
     }
+
+    public TauxTnb findByCategorieCode(String code) {
+        return tauxTnbRepository.findByCategorieCode(code);
+    }
 }

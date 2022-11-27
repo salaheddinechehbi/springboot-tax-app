@@ -12,4 +12,6 @@ public interface RedevableRepository extends JpaRepository<Redevable, Long> {
     int countRedevable();
 
     Redevable findByNameLikeOrEmailLike(String name, String email);
+
+    Redevable findByCin(String cin);
 }
